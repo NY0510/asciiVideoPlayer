@@ -1,8 +1,8 @@
 #include "lib.h"
 
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
-        fprintf(stderr, "Usage: %s <Video Folder Path> <Original FPS> <Target FPS>\n", argv[0]);
+    if (argc != 3) {
+        fprintf(stderr, "Usage: %s <Video Folder Path> <Target FPS>\n", argv[0]);
         return 1;
     }
 
@@ -15,8 +15,7 @@ int main(int argc, char* argv[]) {
     char videoFolderPath[50];
 
     char* VIDEO_NAME = argv[1];
-    int ORIGINAL_FPS = atoi(argv[2]);
-    int TARGET_FPS = atoi(argv[3]);
+    int TARGET_FPS = atoi(argv[2]);
 
     snprintf(videoFolderPath, sizeof(videoFolderPath), "./%s", VIDEO_NAME);
     int numFrames = countFramesInFolder(videoFolderPath);
