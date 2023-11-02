@@ -1,4 +1,13 @@
 #include "lib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <dirent.h>
+#include <sys/ioctl.h>
+#include <math.h>
+#include <signal.h>
+#include <unistd.h>
+#include <time.h>
 
 FILE* openBMPFile(const char* filename) {
     FILE* file = fopen(filename, "rb");
