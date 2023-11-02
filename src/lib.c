@@ -216,6 +216,7 @@ void loadFrames(int numFrames, int*** frameData, BMPFileHeader* fileHeader, BMPI
     char filename[50];
     for (int i = 1; i <= numFrames; i++) {
         printf("Loading frame %d...\n", i);
+        curserToTopLeftTop();
         sprintf(filename, "%s/frame_%d.bmp", VIDEO_NAME, i);
         FILE* file = openBMPFile(filename);
         if (file == NULL) {
