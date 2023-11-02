@@ -11,10 +11,6 @@
 #include <unistd.h>
 #include <time.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 #define BLACK_BG "\x1b[48;2;0;0;0m"
 #define RESET_COLOR "\x1b[0m"
 
