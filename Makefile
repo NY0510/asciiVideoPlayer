@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_executable
+# Target rules for targets named ascii-video-player
 
 # Build rule for target.
-my_executable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_executable
-.PHONY : my_executable
+ascii-video-player: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ascii-video-player
+.PHONY : ascii-video-player
 
 # fast build rule for target.
-my_executable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/build
-.PHONY : my_executable/fast
+ascii-video-player/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/build
+.PHONY : ascii-video-player/fast
 
 src/lib.o: src/lib.c.o
 .PHONY : src/lib.o
 
 # target to build an object file
 src/lib.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/src/lib.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/lib.c.o
 .PHONY : src/lib.c.o
 
 src/lib.i: src/lib.c.i
@@ -142,7 +142,7 @@ src/lib.i: src/lib.c.i
 
 # target to preprocess a source file
 src/lib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/src/lib.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/lib.c.i
 .PHONY : src/lib.c.i
 
 src/lib.s: src/lib.c.s
@@ -150,7 +150,7 @@ src/lib.s: src/lib.c.s
 
 # target to generate assembly for a file
 src/lib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/src/lib.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/lib.c.s
 .PHONY : src/lib.c.s
 
 src/main.o: src/main.c.o
@@ -158,7 +158,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/src/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -166,7 +166,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/src/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -174,7 +174,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_executable.dir/build.make CMakeFiles/my_executable.dir/src/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... my_executable"
+	@echo "... ascii-video-player"
 	@echo "... src/lib.o"
 	@echo "... src/lib.i"
 	@echo "... src/lib.s"

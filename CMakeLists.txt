@@ -15,4 +15,4 @@ set(SOURCES
 include_directories(src)
 
 # Create an executable from the source files
-add_executable(my_executable ${SOURCES})
+add_executable(ascii-video-player ${SOURCES})
