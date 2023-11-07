@@ -5,11 +5,17 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <dirent.h>
-#include <sys/ioctl.h>
 #include <math.h>
 #include <signal.h>
 #include <unistd.h>
 #include <time.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <sys/ioctl.h>
+#include <unistd.h>
+#endif
 
 #define BLACK_BG "\x1b[48;2;0;0;0m"
 #define RESET_COLOR "\x1b[0m"
@@ -52,6 +58,7 @@ void handleCtrlC(int signum);
 void curserToTopLeftTop();
 void curserVisible(int visible);
 void loadFrames(int numFrames, int*** frameData, BMPFileHeader* fileHeader, BMPInfoHeader* infoHeader, char videoName[50]);
+void getTerminalSize(struct winsize* w);
 void playFrames(int numFrames, int*** frameData, BMPInfoHeader infoHeader, char VIDEO_NAME[50], int TARGET_FPS);
 void freeFrames(int numFrames, int*** frameData);
 

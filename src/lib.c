@@ -229,9 +229,25 @@ void loadFrames(int numFrames, int*** frameData, BMPFileHeader* fileHeader, BMPI
     }
 }
 
+void getTerminalSize(struct winsize* w) {
+    // 윈도우 환경
+#ifdef _WIN32
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    w->ws_col = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    w->ws_row = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+
+    // 리눅스 및 맥 환경
+#else
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, w);
+#endif
+}
+
+
 void playFrames(int numFrames, int*** frameData, BMPInfoHeader infoHeader, char VIDEO_NAME[50], int TARGET_FPS) {
     struct winsize w;
-    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    getTerminalSize(&w);
+    // ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     playMP3(VIDEO_NAME);
     struct timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);
