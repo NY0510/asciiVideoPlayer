@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake -E rm -f
+RM = /usr/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ny64/Dev/C/asciiVideoPlayer
+CMAKE_SOURCE_DIR = /home/misile/asciivideoplayer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ny64/Dev/C/asciiVideoPlayer
+CMAKE_BINARY_DIR = /home/misile/asciivideoplayer
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/ny64/Dev/C/asciiVideoPlayer
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.27.7/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.27.7/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ny64/Dev/C/asciiVideoPlayer/CMakeFiles /Users/ny64/Dev/C/asciiVideoPlayer//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/misile/asciivideoplayer/CMakeFiles /home/misile/asciivideoplayer//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ny64/Dev/C/asciiVideoPlayer/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/misile/asciivideoplayer/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,67 +116,6 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named ascii-video-player
-
-# Build rule for target.
-ascii-video-player: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ascii-video-player
-.PHONY : ascii-video-player
-
-# fast build rule for target.
-ascii-video-player/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/build
-.PHONY : ascii-video-player/fast
-
-src/lib.o: src/lib.c.o
-.PHONY : src/lib.o
-
-# target to build an object file
-src/lib.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/lib.c.o
-.PHONY : src/lib.c.o
-
-src/lib.i: src/lib.c.i
-.PHONY : src/lib.i
-
-# target to preprocess a source file
-src/lib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/lib.c.i
-.PHONY : src/lib.c.i
-
-src/lib.s: src/lib.c.s
-.PHONY : src/lib.s
-
-# target to generate assembly for a file
-src/lib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/lib.c.s
-.PHONY : src/lib.c.s
-
-src/main.o: src/main.c.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ascii-video-player.dir/build.make CMakeFiles/ascii-video-player.dir/src/main.c.s
-.PHONY : src/main.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -185,13 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ascii-video-player"
-	@echo "... src/lib.o"
-	@echo "... src/lib.i"
-	@echo "... src/lib.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 .PHONY : help
 
 

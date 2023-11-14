@@ -1,5 +1,11 @@
 #include "lib.h"
 
+#ifdef _WIN32
+#include "Windows.h"
+#else
+#include "sys/ioctl.h"
+#endif
+
 FILE* openBMPFile(const char* filename) {
     FILE* file = fopen(filename, "rb");
     if (file == NULL) {
@@ -8,6 +14,20 @@ FILE* openBMPFile(const char* filename) {
     }
     return file;
 }
+
+#ifdef __WIN32
+void getConsoleSize(int *rows, int *cols) {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
+        *rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+        *cols = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    } else {
+        fprintf(stderr, "Error getting console screen buffer info.\n");
+        *rows = *cols = -1;  // Indicate error with negative values
+    }
+}
+#endif
 
 
 void readBMPHeaders(FILE* file, BMPFileHeader* fileHeader, BMPInfoHeader* infoHeader) {

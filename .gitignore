@@ -58,6 +58,8 @@ ascii-video-player
 *.d
 *.mp4
 *.mp3
+*.mkv
+*.webm
 
 # CMake.gitignore by ignofierplus
 CMakeLists.txt.user

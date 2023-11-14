@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <dirent.h>
-#include <sys/ioctl.h>
+//#include <sys/ioctl.h>
 #include <math.h>
 #include <signal.h>
 #include <unistd.h>
